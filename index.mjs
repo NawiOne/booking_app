@@ -4,7 +4,7 @@ import Mongoose from 'mongoose'
 
 const app = Express();
 const PORT = 3001;
-const dbString = 'mongodb://localhost:27017/booking_skuy'
+const dbString = 'mongodb://nawi_skuy:onjanuary@ac-hqddaxm-shard-00-00.imbdcka.mongodb.net:27017,ac-hqddaxm-shard-00-01.imbdcka.mongodb.net:27017,ac-hqddaxm-shard-00-02.imbdcka.mongodb.net:27017/?ssl=true&replicaSet=atlas-8lb7u7-shard-0&authSource=admin&retryWrites=true&w=majority'
 
 app.use(Express.urlencoded({ extended: true }));
 app.use(Express.json());
@@ -17,7 +17,10 @@ app.listen(PORT, () => {
 });
 
 
-Mongoose.connect(dbString).then(() => {
+Mongoose.connect(dbString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
     console.log('Database is connected')
 }).catch((err) => {
     console.log(err);

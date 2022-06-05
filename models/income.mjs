@@ -8,12 +8,27 @@ Date.prototype.addHours = function(h) {
 }
 
 const IncomeSchema = Mongoose.Schema({
-    id: String,
     source_id: String,
     amount: String,
-    created_at: { type: Date, default: new Date().addHours(7) },
+    created_at: {
+        type: Number,
+        get: v => Math.floor(v),
+        set: v => Math.floor(v),
+        alias: 'i',
+        default: function() {
+            return null;
+        }
+    },
     created_by: String,
-    updated_at: { type: Date, default: new Date().addHours(7) },
+    updated_at: {
+        type: Number,
+        get: v => Math.floor(v),
+        set: v => Math.floor(v),
+        alias: 'i',
+        default: function() {
+            return null;
+        }
+    },
     updated_by: String
 })
 
