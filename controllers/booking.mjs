@@ -6,63 +6,63 @@ import date_format from '../lib/helper.mjs';
 import mongoose from 'mongoose'
 
 const Booking = {
-    create: (req, res) => {
+    // create: (req, res) => {
 
-        const {
-            id,
-            booking_no,
-            booking_date,
-            schedule_date,
-            booking_duration,
-            room_no,
-            total_price,
-            status,
-            created_at,
-            created_by,
-            updated_at,
-            updated_by
-        } = req.body
-
-
-        const booking = new BookingSchema({
-            id,
-            booking_no,
-            booking_date,
-            schedule_date,
-            booking_duration,
-            room_no,
-            total_price,
-            status,
-            created_at,
-            created_by,
-            updated_at,
-            updated_by
-        })
-
-        booking.save().then((res) => {
+    //     const {
+    //         id,
+    //         booking_no,
+    //         booking_date,
+    //         schedule_date,
+    //         booking_duration,
+    //         room_no,
+    //         total_price,
+    //         status,
+    //         created_at,
+    //         created_by,
+    //         updated_at,
+    //         updated_by
+    //     } = req.body
 
 
-        }).catch((err) => {
-            res.status(500).send({
-                status: false,
-                message: 'Some error occurred while creating data',
-                data: {}
-            });
-        });
-    },
+    //     const booking = new BookingSchema({
+    //         id,
+    //         booking_no,
+    //         booking_date,
+    //         schedule_date,
+    //         booking_duration,
+    //         room_no,
+    //         total_price,
+    //         status,
+    //         created_at,
+    //         created_by,
+    //         updated_at,
+    //         updated_by
+    //     })
+
+    //     booking.save().then((res) => {
 
 
-    findOne: (req, res) => {
-        BookingSchema.find({
-            id: 3
-        }).then(data => {
-            res.json(data)
-        }).catch(err => {
-            res.status(500).send({
-                message: err
-            })
-        })
-    },
+    //     }).catch((err) => {
+    //         res.status(500).send({
+    //             status: false,
+    //             message: 'Some error occurred while creating data',
+    //             data: {}
+    //         });
+    //     });
+    // },
+
+
+    // findOne: (req, res) => {
+    //     BookingSchema.find({
+    //         id: 3
+    //     }).then(data => {
+    //         res.json(data)
+    //     }).catch(err => {
+    //         res.status(500).send({
+    //             message: err
+    //         })
+    //     })
+    // },
 
     transaction: async(req, res) => {
         const dbString = 'mongodb://nawi_skuy:onjanuary@ac-hqddaxm-shard-00-00.imbdcka.mongodb.net:27017,ac-hqddaxm-shard-00-01.imbdcka.mongodb.net:27017,ac-hqddaxm-shard-00-02.imbdcka.mongodb.net:27017/?ssl=true&replicaSet=atlas-8lb7u7-shard-0&authSource=admin&retryWrites=true&w=majority'
@@ -77,7 +77,6 @@ const Booking = {
             schedule_date,
             booking_duration,
             room_no,
-            total_price,
             status,
             created_at,
             created_by,
@@ -107,7 +106,7 @@ const Booking = {
 
                 Booking.create([{
                     id,
-                    booking_no: 4,
+                    booking_no,
                     booking_date: bkDate,
                     schedule_date: schDate,
                     booking_duration,
