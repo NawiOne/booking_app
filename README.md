@@ -2,8 +2,6 @@
 
 <!-- @format -->
 
- <h1  align="center">CLI
- <br>
  <p>BOOKING API</p>
  </h1>
   
