@@ -2,8 +2,6 @@
 
 <!-- @format -->
 
- <p>BOOKING API</p>
- </h1>
   
 ## Contents
 - [Installation](#installation-for-development)
