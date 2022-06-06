@@ -49,5 +49,5 @@
 
 ```sh
   POST --> /book
-  GET --> /book?booking_no&booking_date
+  GET --> /book?booking_no=1&booking_date=2022-06-05 16:36:00
 ```
