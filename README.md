@@ -4,7 +4,7 @@
 
  <h1  align="center">CLI
  <br>
- <p>Convert file to plaintext or json</p>
+ <p>BOOKING API</p>
  </h1>
   
 ## Contents
